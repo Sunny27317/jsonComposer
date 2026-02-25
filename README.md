@@ -67,3 +67,34 @@ Array structures are normalized using generalized `[]` notation.
 Each primitive leaf becomes a token representing a JSON path:
 
 Example:
+orders[].id
+user.profile.email
+[].name
+
+
+### Step 3: Compose Sequence
+Users drag tokens into the Sequence Builder.
+
+The position of tokens in the sequence defines:
+- The order of output generation
+- The structure of result data
+
+### Step 4: Resolve Paths
+The system resolves each token path using a generalized array-aware path resolver:
+
+```ts
+resolveToken(json, path) -> { values: any[] }
+
+🛠 Tech Stack
+
+React
+
+TypeScript
+
+Vite
+
+TailwindCSS
+
+@dnd-kit (drag-and-drop)
+
+LocalStorage persistence
